@@ -6,6 +6,7 @@
  *  If you plot the cost function of a small difference on Ø0 and Ø1,
  *  you will see the cost function grow exponentially
  * )
+ * If the cost function === 0 => the hypothesis of x === y
  * */
 
 const hypothesis = require('./hypothesis');
