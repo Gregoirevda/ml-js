@@ -11,7 +11,7 @@
  *                                           x
  * H     = Ø  + Ø * x
  *  Ø(x)    0    1
- * h subscript teta of x = teta zero + teta one of x
+ * h subscript theta of x = theta zero + theta one of x
  *
  * Different ways to represent h :
  *
@@ -25,16 +25,16 @@
  * The y intercept and the slope are constant trough a training set
  *
  * The goal:
- * Choose teta zero(a) and teta one(b) so that the predicated value h(x) is the closest to y
+ * Choose theta zero(a) and theta one(b) so that the predicated value h(x) is the closest to y
  *
  * How:
- * Minimize teta zero and teta one -> (h(x) - y)2 == 0
- * This is what the cost function does : cost.js
+ * Minimize theta zero and theta one -> (h(x) - y)2 == 0
+ * Minimize the cost function (Minimize the difference between y and h(x))
  **/
 
 /**
  * @param x: input
- * @param a: y intercept (y position on x = 0)
- * @param b: slope (∆y on ∆x = 1)
+ * @param thetaZero: y intercept (y position on x = 0)
+ * @param thetaOne: slope (∆y on ∆x = 1)
  */
-export const hypothesis = (x, a, b) => a + b*x;
+export const hypothesis = (x, thetaZero, thetaOne) => thetaZero + thetaOne*x;
