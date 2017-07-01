@@ -9,11 +9,13 @@
  *                                           ^
  *                                          ||
  *                                           x
- * H     = 0  + 0 * x
- *  0(x)    o    1
+ * H     = Ø  + Ø * x
+ *  Ø(x)    0    1
  * h subscript teta of x = teta zero + teta one of x
  *
- * or
+ * Different ways to represent h :
+ *
+ * 1. Linear regression with one variable
  *
  * y = a+bx
  * with
@@ -30,5 +32,9 @@
  * This is what the cost function does : cost.js
  **/
 
-
-export const hypothesis = (x/*input*/, a/*y intercept*/, b/*slope*/) => a + b*x;
+/**
+ * @param x: input
+ * @param a: y intercept (y position on x = 0)
+ * @param b: slope (∆y on ∆x = 1)
+ */
+export const hypothesis = (x, a, b) => a + b*x;
