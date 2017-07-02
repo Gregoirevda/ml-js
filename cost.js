@@ -12,9 +12,16 @@
 const hypothesis = require('./hypothesis');
 
 export const cost = (trainingSet, thetaZero, thetaOne) =>
-  1/2 *
+  1/(2 * trainingSet.length) *
   Math.pow(
-    trainingSet.reduce(({x, y}) =>
-      hypothesis(x, thetaZero, thetaOne) - y
+    trainingSet.reduce((acc, {x, y}) =>
+      acc + hypothesis(x, thetaZero, thetaOne) - y
     ,0)
   ,2);
+
+//X0 should be 1
+export const costDerivative = (trainingSet, thetaZero, thetaOne) => {
+  return 1/trainingSet.length * trainingSet.reduce((acc, {x, y}) =>
+    (acc + hypothesis(x, thetaZero, thetaOne) - y) * x
+  , 0)
+};
