@@ -9,19 +9,19 @@
  * If the cost function === 0 => the hypothesis of x === y
  * */
 
-const hypothesis = require('./hypothesis');
+const {hypothesisWithOneVariable} = require('./hypothesis');
 
 exports.cost = (trainingSet, thetaZero, thetaOne) =>
   1/(2 * trainingSet.length) *
   Math.pow(
     trainingSet.reduce((acc, {x, y}) =>
-      acc + hypothesis(x, thetaZero, thetaOne) - y
+      acc + hypothesisWithOneVariable(x, thetaZero, thetaOne) - y
     ,0)
   ,2);
 
 //X0 should be 1
 exports.costDerivative = (trainingSet, thetaZero, thetaOne) => {
   return 1/trainingSet.length * trainingSet.reduce((acc, {x, y}) =>
-    (acc + hypothesis(x, thetaZero, thetaOne) - y) * x
+    (acc + hypothesisWithOneVariable(x, thetaZero, thetaOne) - y) * x
   , 0)
 };
