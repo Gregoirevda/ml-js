@@ -7,7 +7,7 @@
  * Starting from a position,
  * finds out the descending direction.
  * Take one step in that direction and again finds out descending direction.
- * It can also bring us in other directions. See starting point y
+ * It can also bring us in other directions. See starting point y (Only if more than 1 variable)
  *
  * ---                    --x2---x1----y1--y2                                                    ----
  *    \         x4---x3--/                   \--y3- (this was not the most minimized cost fn)--/
@@ -33,7 +33,7 @@
 import {greaterOrLessThen} from './utils/index';
 const costDerivative = require('./cost').costDerivative;
 
-export const gradientDescent = (trainingSet, learningRate, thetaZero, thetaOne) => {
+exports.gradientDescent = (trainingSet, learningRate, thetaZero, thetaOne) => {
   //Important! theta's have to be updated at the same time,
   // because the costFn needs to be calculated on the same thetas.
   // (Don't assign and use for next).

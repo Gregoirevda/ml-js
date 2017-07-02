@@ -37,4 +37,4 @@
  * @param thetaZero: y intercept (y position on x = 0)
  * @param thetaOne: slope (∆y on ∆x = 1)
  */
-export const hypothesis = (x, thetaZero, thetaOne) => thetaZero + thetaOne*x;
+exports.hypothesisWithOneVariable = (x, thetaZero, thetaOne) => thetaZero + thetaOne*x;
