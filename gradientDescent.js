@@ -30,7 +30,6 @@
  *
  **/
 
-const {greaterOrLessThen, toNotRounded2Dec} = require('./utils');
 const {costDerivative, costDerivativeTheta0} = require('./cost');
 
 exports.gradientDescent = (trainingSet, learningRate, thetaZero, thetaOne) => {
