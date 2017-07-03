@@ -19,9 +19,14 @@ exports.cost = (trainingSet, thetaZero, thetaOne) =>
     ,0)
   ,2);
 
-//X0 should be 1
 exports.costDerivative = (trainingSet, thetaZero, thetaOne) => {
   return 1/trainingSet.length * trainingSet.reduce((acc, {x, y}) =>
-    (acc + hypothesisWithOneVariable(x, thetaZero, thetaOne) - y) * x
+      acc + ((hypothesisWithOneVariable(x, thetaZero, thetaOne) - y) * x)
   , 0)
+};
+
+exports.costDerivativeTheta0 = (trainingSet, thetaZero, thetaOne) => {
+  return 1/trainingSet.length * trainingSet.reduce((acc, {x, y}) =>
+      acc + (hypothesisWithOneVariable(x, thetaZero, thetaOne) - y)
+      , 0)
 };

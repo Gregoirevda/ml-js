@@ -30,8 +30,8 @@
  *
  **/
 
-import {greaterOrLessThen} from './utils/index';
-const costDerivative = require('./cost').costDerivative;
+const {greaterOrLessThen, toNotRounded2Dec} = require('./utils');
+const {costDerivative, costDerivativeTheta0} = require('./cost');
 
 exports.gradientDescent = (trainingSet, learningRate, thetaZero, thetaOne) => {
   //Important! theta's have to be updated at the same time,
@@ -39,13 +39,14 @@ exports.gradientDescent = (trainingSet, learningRate, thetaZero, thetaOne) => {
   // (Don't assign and use for next).
   let tempThetaZero, tempThetaOne;
   while(true) {
-    tempThetaZero = thetaZero - learningRate * (costDerivative(trainingSet, thetaZero, thetaOne));
+
+    tempThetaZero = thetaZero - learningRate * (costDerivativeTheta0(trainingSet, thetaZero, thetaOne));
     tempThetaOne = thetaOne - learningRate * (costDerivative(trainingSet, thetaZero, thetaOne));
 
-    // If previous theta and new calculated theta are close
+    // If previous theta and new calculated theta are converging
     if(
-      greaterOrLessThen(thetaZero, tempThetaZero, 2) &&
-      greaterOrLessThen(thetaOne, tempThetaOne, 2)
+      thetaZero.toFixed(5) === tempThetaZero.toFixed(5) &&
+      thetaOne.toFixed(5) === tempThetaOne.toFixed(5)
     ) {
       break;
     }
@@ -54,5 +55,6 @@ exports.gradientDescent = (trainingSet, learningRate, thetaZero, thetaOne) => {
     thetaOne = tempThetaOne;
   }
 
-  return [tempThetaZero, tempThetaOne];
+  //ParseInt around Math.round, because parseInt will transform -0 to 0.
+  return [parseInt(Math.round(tempThetaZero)), parseInt(Math.round(tempThetaOne))];
 };
