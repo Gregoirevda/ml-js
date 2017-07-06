@@ -1,4 +1,3 @@
-
 /*
  * Hypothesis : Function that maps x to y
  *
@@ -38,3 +37,18 @@
  * @param thetaOne: slope (∆y on ∆x = 1)
  */
 exports.hypothesisWithOneVariable = (x, thetaZero, thetaOne) => thetaZero + thetaOne*x;
+
+//Hypothesis with multiple variables
+exports.hypothesis = (variables, thetas) => {
+  //Should respect the convention that X0 is 1
+  if(!variables || !thetas ||
+      !Array.isArray(variables) && !Array.isArray(thetas) &&
+      variables.length !== thetas.length ||
+      variables[0] !== 1
+  )
+    throw new Error("Hypothesis with multiple variables: incorrect parameters");
+
+  return thetas.reduce((acc, theta, index) => {
+    return acc + (theta * variables[index])
+  }, 0);
+};
