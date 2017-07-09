@@ -32,7 +32,7 @@
 
 const {costDerivative, costDerivativeTheta0} = require('./cost');
 
-exports.gradientDescent = (trainingSet, learningRate, thetaZero, thetaOne) => {
+exports.gradientDescentWithOneVariable = (trainingSet, learningRate, thetaZero, thetaOne) => {
   //Important! theta's have to be updated at the same time,
   // because the costFn needs to be calculated on the same thetas.
   // (Don't assign and use for next).
@@ -44,8 +44,8 @@ exports.gradientDescent = (trainingSet, learningRate, thetaZero, thetaOne) => {
 
     // If previous theta and new calculated theta are converging
     if(
-      thetaZero.toFixed(5) === tempThetaZero.toFixed(5) &&
-      thetaOne.toFixed(5) === tempThetaOne.toFixed(5)
+      thetaZero.toFixed(4) === tempThetaZero.toFixed(4) &&
+      thetaOne.toFixed(4) === tempThetaOne.toFixed(4)
     ) {
       break;
     }

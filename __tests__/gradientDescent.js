@@ -1,4 +1,4 @@
-const {gradientDescent} = require('../gradientDescent');
+const {gradientDescentWithOneVariable} = require('../gradientDescent');
 const {toNotRounded2Dec} = require('../utils');
 
 describe.only('Gradient descent', () => {
@@ -14,7 +14,7 @@ describe.only('Gradient descent', () => {
       const thetaZero = 10,
       thetaOne = 10;
 
-    expect(gradientDescent(trainingSet, .003, thetaZero, thetaOne)).toEqual([0, 0]);
+    expect(gradientDescentWithOneVariable(trainingSet, .003, thetaZero, thetaOne)).toEqual([0, 0]);
   });
 
   test("Should give the correct theta's of a training set with no slope and positive starting point", () => {
@@ -27,7 +27,7 @@ describe.only('Gradient descent', () => {
       thetaZero = 10,
       thetaOne = 10;
 
-    expect(gradientDescent(trainingSet, .003, thetaZero, thetaOne)).toEqual([1, 0]);
+    expect(gradientDescentWithOneVariable(trainingSet, .003, thetaZero, thetaOne)).toEqual([1, 0]);
   });
 
   test("Should give the correct theta's of a training set with no slope and negative starting point", () => {
@@ -40,7 +40,7 @@ describe.only('Gradient descent', () => {
       thetaZero = 10,
       thetaOne = 10;
 
-    expect(gradientDescent(trainingSet, .003, thetaZero, thetaOne)).toEqual([-1, 0]);
+    expect(gradientDescentWithOneVariable(trainingSet, .003, thetaZero, thetaOne)).toEqual([-1, 0]);
   });
 
 
@@ -54,7 +54,7 @@ describe.only('Gradient descent', () => {
       thetaZero = 10,
       thetaOne = 10;
 
-    expect(gradientDescent(trainingSet, .003, thetaZero, thetaOne)).toEqual([0, 1]);
+    expect(gradientDescentWithOneVariable(trainingSet, .003, thetaZero, thetaOne)).toEqual([0, 1]);
   });
 
   test("Should give the correct theta's of a training set with positive slope and positive starting point", () => {
@@ -67,7 +67,7 @@ describe.only('Gradient descent', () => {
       thetaZero = 10,
       thetaOne = 10;
 
-    expect(gradientDescent(trainingSet, .003, thetaZero, thetaOne)).toEqual([1, 1]);
+    expect(gradientDescentWithOneVariable(trainingSet, .003, thetaZero, thetaOne)).toEqual([1, 1]);
   });
 
   test("Should give the correct theta's of a training set with positive slope and negative starting point", () => {
@@ -80,7 +80,7 @@ describe.only('Gradient descent', () => {
       thetaZero = 10,
       thetaOne = 10;
 
-    expect(gradientDescent(trainingSet, .003, thetaZero, thetaOne)).toEqual([-1, 1]);
+    expect(gradientDescentWithOneVariable(trainingSet, .003, thetaZero, thetaOne)).toEqual([-1, 1]);
   });
 
   test("Should give the correct theta's of a training set with negative slope and zero starting point", () => {
@@ -93,7 +93,7 @@ describe.only('Gradient descent', () => {
       thetaZero = 10,
       thetaOne = 10;
 
-    expect(gradientDescent(trainingSet, .003, thetaZero, thetaOne)).toEqual([0, -1]);
+    expect(gradientDescentWithOneVariable(trainingSet, .003, thetaZero, thetaOne)).toEqual([0, -1]);
   });
 
   test("Should give the correct theta's of a training set with negative slope and negative starting point", () => {
@@ -106,7 +106,7 @@ describe.only('Gradient descent', () => {
       thetaZero = 10,
       thetaOne = 10;
 
-    expect(gradientDescent(trainingSet, .003, thetaZero, thetaOne)).toEqual([-1, -1]);
+    expect(gradientDescentWithOneVariable(trainingSet, .003, thetaZero, thetaOne)).toEqual([-1, -1]);
   });
 
   test("Should give the correct theta's of a training set with negative slope and positive starting point", () => {
@@ -119,6 +119,6 @@ describe.only('Gradient descent', () => {
       thetaZero = 10,
       thetaOne = 10;
 
-    expect(gradientDescent(trainingSet, .003, thetaZero, thetaOne)).toEqual([1, -1]);
+    expect(gradientDescentWithOneVariable(trainingSet, .003, thetaZero, thetaOne)).toEqual([1, -1]);
   });
 });
