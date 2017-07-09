@@ -1,5 +1,5 @@
-const {gradientDescentWithOneVariable, gradientDescent} = require('../gradientDescent');
-const {toNotRounded2Dec} = require('../utils');
+const {gradientDescentWithOneVariable, gradientDescent} = require('../../linear-regression/gradientDescent');
+const {toNotRounded2Dec} = require('../../utils/index');
 
 describe('Gradient descent', () => {
   describe('With one variable', () => {

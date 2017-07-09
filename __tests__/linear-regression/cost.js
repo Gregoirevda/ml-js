@@ -1,4 +1,4 @@
-const {cost} = require('../cost');
+const {cost} = require('../../linear-regression/cost');
 
 describe('Cost', () => {
   it('Should give the correct cost of a training set with no slope and zero as starting point', () => {

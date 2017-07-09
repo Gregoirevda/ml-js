@@ -1,4 +1,4 @@
-const {hypothesisWithOneVariable, hypothesis} = require('../hypothesis');
+const {hypothesisWithOneVariable, hypothesis} = require('../../linear-regression/hypothesis');
 
 describe('Hypothesis', () => {
 
