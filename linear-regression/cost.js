@@ -12,7 +12,7 @@
 const {hypothesisWithOneVariable, hypothesis} = require('./hypothesis');
 
 exports.cost = (trainingSet, thetaZero, thetaOne) =>
-  1/(2 * trainingSet.length) *
+  1/2 * trainingSet.length *
   Math.pow(
     trainingSet.reduce((acc, {x, y}) =>
       acc + hypothesisWithOneVariable(x, thetaZero, thetaOne) - y
