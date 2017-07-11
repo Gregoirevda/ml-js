@@ -26,7 +26,7 @@
 * if Z < 0 => 0
 * */
 
-const linearRegressionHypothesis = require('../logistic-regression/hypothesis').hypothesis;
+const linearRegressionHypothesis = require('../linear-regression/hypothesis').hypothesis;
 
 exports.hypothesis = (variables, thetas) =>
   1/(1+Math.pow(Math.E, -linearRegressionHypothesis(variables, thetas)));
