@@ -45,8 +45,9 @@ exports.hypothesis = (variables, thetas) => {
       !Array.isArray(variables) && !Array.isArray(thetas) &&
       variables.length !== thetas.length ||
       variables[0] !== 1
-  )
+  ) {
     throw new Error("Hypothesis with multiple variables: incorrect parameters");
+  }
 
   return thetas.reduce((acc, theta, index) => {
     return acc + (theta * variables[index])
